@@ -1,0 +1,50 @@
+labels:
+  app: "postgres"
+  group: "db"
+
+image:
+  repository: "docker.io/postgres"
+  tag: "9.6"
+replicas: "1"
+httpPort: 5432
+
+resources: |
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+tracing-enabled: false
+
+env: |
+  - name: POSTGRES_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: password
+  - name:  POSTGRES_USER
+    valueFrom: 
+      secretKeyRef: 
+        name: db
+        key: username
+  - name: POSTGRES_DB
+    value: {{ default "" .Values.postgresDatabase | quote }}
+
+postgresDatabase: ifix_dev_db
+
+persistence:
+  enabled: true
+  aws:
+    volumeId: "vol-0220f0d34ed269ca5"
+  storageClassName: default
+  accessMode: ReadWriteOnce
+  dataDirSize: 20Gi 
+  volumeMode: Filesystem
+
+extraVolumeMounts: |
+  - mountPath: /var/lib/postgresql/data
+    name: postgres-data-ifix
+    subPath: html
+extraVolumes: |
+  - name: postgres-data-ifix
+    persistentVolumeClaim:
+      claimName: postgres-data-ifix
