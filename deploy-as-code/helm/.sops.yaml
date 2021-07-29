@@ -2,7 +2,7 @@
 creation_rules:
         # upon creation of a file that matches the pattern *dev.yaml,
         # KMS set A is used
-        - path_regex: environments/TenantA\-secrets\.yaml$   #mgramseva
+        - path_regex: environments/stateA\-secrets\.yaml$   #mgramseva
           encrypted_regex: '^(secrets)$'
           kms: 'arn:aws:kms:ap-south-1:218381940040:key/9a3b0835-7713-4925-8b3d-da7e421d28d2'
           #gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
