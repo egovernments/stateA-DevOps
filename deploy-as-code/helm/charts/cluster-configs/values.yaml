@@ -1,13 +1,13 @@
 cluster-configs:
   db:
-    namespace: ifix
+    namespace: statea
     name: db-service
     port: 5432
     targetPort: 5432
 
   root-ingress:
     name: root-ingress
-    namespace: ifix
+    namespace: statea
     cert-issuer: "letsencrypt-staging"
     appRoot: citizen
     serviceName: citizen
@@ -16,13 +16,13 @@ cluster-configs:
   nginx-errors:
     enabled: false
     name: nginx-errors
-    namespace: ifix
+    namespace: statea
     serviceName: nginx-errors
     servicePort: 80
 
   configmaps:
     egov-config:
-      namespace: [ ifix ]
+      namespace: [ statea ]
       name: egov-config
       server-tomcat-max-connections: "500"
       server-tomcat-max-threads: "10"
@@ -32,99 +32,99 @@ cluster-configs:
 
     egov-service-host:    
       name: egov-service-host
-      namespace: [ ifix ] 
+      namespace: [ statea ] 
 
   secrets:
     db: 
-      namespace: [ ifix ]
+      namespace: [ statea ]
       name: db
 
     egov-notification-sms:
-      namespace: ifix
+      namespace: statea
       name: egov-notification-sms
 
     egov-filestore: 
-      namespace: ifix
+      namespace: statea
       name: egov-filestore     
       
     egov-location: 
-      namespace: ifix
+      namespace: statea
       name: egov-location
 
     egov-pg-service: 
-      namespace: ifix
+      namespace: statea
       name: egov-pg-service                 
 
     pgadmin: 
-      namespace: ifix
+      namespace: statea
       name: pgadmin       
 
     egov-enc-service: 
-      namespace: ifix
+      namespace: statea
       name: egov-enc-service       
 
     egov-notification-mail: 
-      namespace: ifix
+      namespace: statea
       name: egov-notification-mail
 
     home-isolation-notification-mail: 
-      namespace: ifix
+      namespace: statea
       name: home-isolation-notification-mail      
 
     git-sync: 
-      namespace: [ ifix ]
+      namespace: [ statea ]
       name: git-creds
 
     kibana: 
-      namespace: ifix
+      namespace: statea
       name: kibana-creds                       
 
     kibana-infra: 
-      namespace: ifix
+      namespace: statea
       name: kibana-infra-creds     
 
     pgadmin: 
-      namespace: ifix
+      namespace: statea
       name: pgadmin
 
     egov-si-microservice:
-      namespace: ifix
+      namespace: statea
       name: egov-si-microservice
 
     egov-edcr-notification:
-      namespace: ifix
+      namespace: statea
       name: egov-edcr-notification 
 
     egov-edcr-bank-gateway:
-      namespace: ifix
+      namespace: statea
       name: egov-edcr-bank-gateway
 
     chatbot:
-      namespace: ifix
+      namespace: statea
       name: chatbot
     
     covid-chatbot:
-      namespace: ifix
+      namespace: statea
       name: covid-chatbot
 
     egov-user-chatbot:
-      namespace: ifix
+      namespace: statea
       name: egov-user-chatbot
 
     oauth2-proxy:
-      namespace: ifix
+      namespace: statea
       name: oauth2-proxy   
 
     case-management:
-      namespace: ifix
+      namespace: statea
       name: case-management   
   
     minio:
-      namespace: ifix
+      namespace: statea
       name: minio
 
     alertmanager:
-      namespace: ifix
+      namespace: statea
       name: alertmanager-main      
 
     jenkins:
@@ -132,11 +132,11 @@ cluster-configs:
       name: jenkins 
     
     mysql:
-      namespace: ifix
+      namespace: statea
       name: mysql
     
     wordpress:
-      namespace: ifix
+      namespace: statea
       name: wordpress
 
     postgres:
