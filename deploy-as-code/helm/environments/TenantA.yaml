@@ -1,29 +1,29 @@
 global:
-  domain: tenanta.digit.org
+  domain: statea.digit.org
   tracing-enabled: true
-  namespace: tenanta
+  namespace: statea
   nodepool:
     nodeAffinity: false
-    selector: tenanta-ng
-    toleration: tenanta-ng
+    selector: statea-ng
+    toleration: statea-ng
 
 cluster-configs:
   namespaces:
-    create: true
+    create: false
     values:
-      [ tenanta , cert-manager ]
+      [ statea , cert-manager ]
 
   rbac:
     - role: user
-      namespaces: [ tenanta ]
+      namespaces: [ statea ]
     - role: admin
-      namespaces: [ tenanta ]
+      namespaces: [ statea ]
 
   root-ingress:
     cert-issuer: letsencrypt-prod
   configmaps:
     egov-config:
-      namespace: [ tenanta ]
+      namespace: [ statea ]
       data:
         db-host: "central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com"
         db-name: "central_instance_db"
@@ -56,7 +56,7 @@ cluster-configs:
         care-db-port: "5432"
 
     egov-service-host:
-      namespace: [ tenanta ]
+      namespace: [ statea ]
       data:
         asset-services: "http://asset-services.digit:8080/"
         asset-services-maha: "http://asset-services-maha.digit:8080/"
