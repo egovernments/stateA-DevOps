@@ -26,13 +26,14 @@ cluster-configs:
       namespace: [ statea ]
       data:
         db-host: "central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com"
+        db-schema: "statea"
         db-name: "central_instance_db"
         db-url: "jdbc:postgresql://central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/central_instance_db"
         bpa-db-url: "jdbc:postgresql://central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/bpa_central_instance_db"
         erp-db-url: "jdbc:postgresql://central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/finance_central_instance_db"
-        domain: "central-instance.digit.org"
-        egov-services-fqdn-name: "https://tenanta.digit.org/"
-        egov-state-level-tenant-id: "pg"
+        domain: "statea.digit.org"
+        egov-services-fqdn-name: "https://statea.digit.org/"
+        egov-state-level-tenant-id: "in.statea"
         es-host: "elasticsearch-data-v1.backbone"
         es-indexer-host: "http://elasticsearch-data-v1.backbone:9200/"
         flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
