@@ -28,7 +28,7 @@ cluster-configs:
         db-host: "central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com"
         db-schema: "statea"
         db-name: "central_instance_db"
-        db-url: "jdbc:postgresql://central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/central_instance_db"
+        db-url: "jdbc:postgresql://central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/central_instance_db?currentSchema=statea"
         bpa-db-url: "jdbc:postgresql://central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/bpa_central_instance_db"
         erp-db-url: "jdbc:postgresql://central-instance-db.cqqfmghbjssw.ap-south-1.rds.amazonaws.com:5432/finance_central_instance_db"
         domain: "statea.digit.org"
