@@ -34,6 +34,8 @@ cluster-configs:
         domain: "statea.digit.org"
         egov-services-fqdn-name: "https://statea.digit.org/"
         egov-state-level-tenant-id: "in.statea"
+        state-level-tenantid-length: "2"
+        is-environment-central-instance: "true"
         es-host: "elasticsearch-data-v1.backbone"
         es-indexer-host: "http://elasticsearch-data-v1.backbone:9200/"
         flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
