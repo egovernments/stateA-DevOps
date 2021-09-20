@@ -106,7 +106,7 @@ env: |
   - name: KAFKA_TOPICS_UPDATE_SERVICE
     value: update-hrms-employee
   - name: KAFKA_TOPICS_NOTIFICATION_SMS
-    value: egov.core.notification.sms
+    value: statea-egov.core.notification.sms
   - name: JAVA_OPTS
     value: {{ index .Values "heap" | quote }}
   - name: SERVER_PORT
