@@ -41,9 +41,9 @@ env: |
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
     value: org.springframework.kafka.support.serializer.JsonSerializer
   - name: KAFKA_TOPICS_SAVE_SERVICE
-    value: save-tl-billingslab
+    value: statea-save-tl-billingslab
   - name: KAFKA_TOPICS_UPDATE_SERVICE
-    value: update-tl-billingslab
+    value: statea-update-tl-billingslab
   - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
