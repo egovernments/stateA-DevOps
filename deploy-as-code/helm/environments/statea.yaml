@@ -37,7 +37,7 @@ cluster-configs:
         state-level-tenantid-length: "2"
         is-environment-central-instance: "true"
         es-host: "elasticsearch-data-v1.statea"
-        es-indexer-host: "http://elasticsearch-data-v1.backbone:9200/"
+        es-indexer-host: "http://elasticsearch-data-v1.statea:9200/"
         flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
         kafka-brokers: "kafka-v2.backbone:9092"
         kafka-infra-brokers: "kafka-v2.backbone:9092"
@@ -764,7 +764,7 @@ zookeeper-v2:
 
 # es-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 elasticsearch-data-v1:
-  namespace: backbone
+  namespace: statea
   image:
     tag: 6.6.2
   persistence:
@@ -787,7 +787,7 @@ elasticsearch-data-v1:
       memory: "1Gi"
 
 elasticsearch-master-v1:
-  namespace: backbone
+  namespace: statea
   replicas: 3
   image:
     tag: 6.6.2
