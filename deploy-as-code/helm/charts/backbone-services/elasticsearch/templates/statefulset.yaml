@@ -51,6 +51,7 @@ spec:
       {{- if .Values.schedulerName }}
       schedulerName: "{{ .Values.schedulerName }}"
       {{- end }}
+      {{- if .Values.global.nodepool.nodeAffinity }}
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -67,6 +68,7 @@ spec:
         effect: "NoSchedule"
       nodeSelector:
         Environment: {{ .Values.global.nodepool.selector }}
+      {{- end }}  
       securityContext:
 {{ toYaml .Values.podSecurityContext | indent 8 }}
         {{- if .Values.fsGroup }}

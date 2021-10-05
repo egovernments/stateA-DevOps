@@ -781,10 +781,10 @@ elasticsearch-data-v1:
   resources:
     requests:
       # cpu: "1000m"
-      memory: "1Gi"
+      memory: "2Gi"
     limits:
       # cpu: "1000m"
-      memory: "1Gi"
+      memory: "2Gi"
 
 elasticsearch-master-v1:
   namespace: statea
@@ -804,9 +804,9 @@ elasticsearch-master-v1:
   esJavaOpts: "-Xmx448m -Xms448m"
   resources:
     requests:
-      memory: "512Mi"
+      memory: "896Mi"
     limits:
-      memory: "512Mi"
+      memory: "896Mi"
 
 es-curator-infra:
   namespace: es-cluster
