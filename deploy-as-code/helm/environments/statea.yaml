@@ -36,7 +36,7 @@ cluster-configs:
         egov-state-level-tenant-id: "in.statea"
         state-level-tenantid-length: "2"
         is-environment-central-instance: "true"
-        es-host: "elasticsearch-data-v1.backbone"
+        es-host: "elasticsearch-data-v1.statea"
         es-indexer-host: "http://elasticsearch-data-v1.backbone:9200/"
         flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
         kafka-brokers: "kafka-v2.backbone:9092"
@@ -769,21 +769,21 @@ elasticsearch-data-v1:
   persistence:
     enabled: true
     aws:
-      - volumeId: "vol-01662a60ec6138a5a"
+      - volumeId: "vol-017e9be997be9e112"
         zone: ap-south-1b
-      - volumeId: "vol-05fae86bda5669ba3"
+      - volumeId: "vol-01b872641b8cbdd9b"
         zone: ap-south-1b
-      - volumeId: "vol-051db52df4ffef8a0"
+      - volumeId: "vol-0089cbe671cf775e2"
         zone: ap-south-1b
 
   esJavaOpts: "-Xmx1g -Xms1g"
   resources:
     requests:
       # cpu: "1000m"
-      memory: "2Gi"
+      memory: "1Gi"
     limits:
       # cpu: "1000m"
-      memory: "2Gi"
+      memory: "1Gi"
 
 elasticsearch-master-v1:
   namespace: backbone
@@ -793,19 +793,19 @@ elasticsearch-master-v1:
   persistence:
     enabled: true
     aws:
-      - volumeId: "vol-08fc19b9a26078e83"
+      - volumeId: "vol-0300731c85ed76ccd"
         zone: ap-south-1b
-      - volumeId: "vol-0b7178613b71e1510"
+      - volumeId: "vol-0ef5a9e29a742a6b3"
         zone: ap-south-1b
-      - volumeId: "vol-0dd38bbc54eba2a07"
+      - volumeId: "vol-07a5e1bb5375d661d"
         zone: ap-south-1b
 
   esJavaOpts: "-Xmx448m -Xms448m"
   resources:
     requests:
-      memory: "896Mi"
+      memory: "512Mi"
     limits:
-      memory: "896Mi"
+      memory: "512Mi"
 
 es-curator-infra:
   namespace: es-cluster
