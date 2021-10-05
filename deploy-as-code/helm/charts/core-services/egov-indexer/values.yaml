@@ -65,3 +65,5 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: egov-state-level-tenant-id
+  - name: EGOV_INDEXER_DSS_COLLECTIONINDEX_TOPIC
+    value: {{ index .Values "dss-collection-topic" | quote }}
