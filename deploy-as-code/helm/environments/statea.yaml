@@ -429,7 +429,7 @@ dashboard-analytics:
       branch: "central-instance"
 
 dashboard-ingest:
-  topic-incoming-collection: "dss-collection-update"
+  topic-incoming-collection: "statea-dss-collection-update"
   es-index-name: "dss-collection_v2"
   es-push-direct: "false"
   config-schema-paths: "file:///work-dir/configs/egov-dss-dashboards/dashboard-ingest/*.json"
