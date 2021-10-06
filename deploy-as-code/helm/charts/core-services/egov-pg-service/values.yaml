@@ -48,11 +48,16 @@ env: |
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
     value: org.springframework.kafka.support.serializer.JsonSerializer
+  - name: EGOV_USERSERVICE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-user
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-idgen
+        key: egov-idgen        
   - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
