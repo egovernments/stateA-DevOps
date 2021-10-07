@@ -92,16 +92,16 @@ env: |
   - name: ES_PUSH_DIRECT
     value: {{ index .Values "es-push-direct" | quote }}
   - name: KAFKA_TRANSACTION_INGEST_TOPIC
-    value: "stateb-ingestData"
+    value: "statea-ingestData"
   - name: KAFKA_TRANSACTION_VALIDATION_TOPIC
-    value: "stateb-validData"
+    value: "statea-validData"
   - name: KAFKA_TRANSACTION_TRANSFORMATION_TOPIC
-    value: "stateb-transformedData"
+    value: "statea-transformedData"
   - name: KAFKA_TOPIC_ERROR_DATA
-    value: "stateb-dataError"
+    value: "statea-dataError"
   - name: KAFKA_TOPICS_ENRICHED_DATA
-    value: "stateb-egov-dss-ingest-enriched"
+    value: "statea-egov-dss-ingest-enriched"
   - name: KAFKA_TOPICS_BYPASS_UPDATE_DATA
-    value: "stateb-egov-dss-update-receive"
+    value: "statea-egov-dss-update-receive"
   - name: KAFKA_TOPICS_BYPASS_UPDATE_POST
-    value: "stateb-egov-dss-update-post"        
+    value: "statea-egov-dss-update-post"        
