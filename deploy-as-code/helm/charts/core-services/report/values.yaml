@@ -51,7 +51,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-mdms-service
+        key: internal-gateway
   - name: EGOV_ENC_HOST
     valueFrom:
       configMapKeyRef:
@@ -63,7 +63,7 @@ env: |
         name: egov-config
         key: egov-state-level-tenant-id
   - name: KAFKA_TOPIC_AUDIT
-    value: "enc-report-audit-data"         
+    value: "statea-enc-report-audit-data"         
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
