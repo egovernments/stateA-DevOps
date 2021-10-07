@@ -25,7 +25,7 @@ tracing-enabled: true
 heap: "-Xmx704m -Xms512m -XX:TieredStopAtLevel=1"
 java-args: ""
 es-index-name: "dss-collection_v2"
-topic-incoming-collection: "dss-collection-update"
+topic-incoming-collection: "statea-dss-collection-update"
 
 # Additional Container Envs
 env: |
@@ -92,16 +92,16 @@ env: |
   - name: ES_PUSH_DIRECT
     value: {{ index .Values "es-push-direct" | quote }}
   - name: KAFKA_TRANSACTION_INGEST_TOPIC
-    value: "statea-ingestData"
+    value: "stateb-ingestData"
   - name: KAFKA_TRANSACTION_VALIDATION_TOPIC
-    value: "statea-validData"
+    value: "stateb-validData"
   - name: KAFKA_TRANSACTION_TRANSFORMATION_TOPIC
-    value: "statea-transformedData"
+    value: "stateb-transformedData"
   - name: KAFKA_TOPIC_ERROR_DATA
-    value: "statea-dataError"
+    value: "stateb-dataError"
   - name: KAFKA_TOPICS_ENRICHED_DATA
-    value: "statea-egov-dss-ingest-enriched"
+    value: "stateb-egov-dss-ingest-enriched"
   - name: KAFKA_TOPICS_BYPASS_UPDATE_DATA
-    value: "statea-egov-dss-update-receive"
+    value: "stateb-egov-dss-update-receive"
   - name: KAFKA_TOPICS_BYPASS_UPDATE_POST
-    value: "statea-egov-dss-update-post"        
+    value: "stateb-egov-dss-update-post"        
