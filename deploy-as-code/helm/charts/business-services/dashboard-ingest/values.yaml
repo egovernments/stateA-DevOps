@@ -91,3 +91,17 @@ env: |
     value: {{ index .Values "java-args" | quote }}
   - name: ES_PUSH_DIRECT
     value: {{ index .Values "es-push-direct" | quote }}
+  - name: KAFKA_TOPIC_INGEST_DATA
+    value: "statea-ingestData"
+  - name: KAFKA_TOPIC_VALID_DATA
+    value: "statea-validData"
+  - name: KAFKA_TOPIC_TRANSFORM_DATA
+    value: "statea-transformedData"
+  - name: KAFKA_TOPIC_ERROR_DATA
+    value: "statea-dataError"
+  - name: KAFKA_TOPICS_ENRICHED_DATA
+    value: "statea-egov-dss-ingest-enriched"
+  - name: KAFKA_TOPICS_BYPASS_UPDATE_DATA
+    value: "statea-egov-dss-update-receive"
+  - name: KAFKA_TOPICS_BYPASS_UPDATE_POST
+    value: "statea-egov-dss-update-post"     
