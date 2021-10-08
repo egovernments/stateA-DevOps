@@ -82,7 +82,7 @@ env: |
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-ws-calculator
   - name: EGOV_METERSERVICE_CREATEMETERCONNECTION
-    value: save-ws-meter
+    value: statea-save-ws-meter
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
