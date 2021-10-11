@@ -1,13 +1,13 @@
 # Common Labels
 labels:
-  app: "egov-mdms-service-tenant-a"
+  app: "egov-mdms-service"
   group: "core"
 
 # Ingress Configs
 ingress:
   enabled: true
   zuul: true
-  context: "egov-mdms-service-tenant-a"
+  context: "egov-mdms-service"
 
 # Init Containers Configs
 initContainers:
