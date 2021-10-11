@@ -156,6 +156,7 @@ cluster-configs:
         vendor: "http://vendor.digit:8080"
         inbox: "http://inbox.digit:8080/"
         statea-egov-mdms-service: "http://egov-mdms-service-tenant-a.digit:8080/"
+        statea-egov-filestore: "http://egov-filestore.statea:8080"
 
 billing-service:
   memory_limits: 512Mi

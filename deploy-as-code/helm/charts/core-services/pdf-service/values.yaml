@@ -102,7 +102,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-filestore
+        key: statea-egov-filestore
   - name: EGOV_HOST
     valueFrom:
       configMapKeyRef:
