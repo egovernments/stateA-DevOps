@@ -65,8 +65,8 @@ env: |
   - name: EGOV_BILLINGSERVICE_HOST
     valueFrom:
       configMapKeyRef:
-        name: egov-config
-        key: egov-services-fqdn-name
+        name: egov-service-host
+        key: billing-service
   - name: EGOV_WS_HOST
     valueFrom:
       configMapKeyRef:
