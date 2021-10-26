@@ -550,7 +550,7 @@ report:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/configs"
-      branch: "central-instance"
+      branch: "statea"
   report-locationsfile-path: "file:///work-dir/configs/reports/reportFileLocationsv1.txt"
   spring-datasource-tomcat-max-active: 5
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
