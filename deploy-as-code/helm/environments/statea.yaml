@@ -264,7 +264,7 @@ egov-user:
   citizen-registration-withlogin: "true"
   citizen-otp-fixed: "123456"
   citizen-otp-fixed-enabled: "true"
-  egov-state-level-tenant-id: "pg"
+  egov-state-level-tenant-id: "in.statea"
 
 chatbot:
   kafka-topics-partition-count: 3
@@ -401,7 +401,7 @@ react-pgr-web:
 
 
 egov-user-chatbot:
-  egov-state-level-tenant-id: "pg"
+  egov-state-level-tenant-id: "in.statea"
 
 employee:
   dashboard-url: "https://dashboard-pbuat.egovernments.org/s/w---s/app/kibana#/dashboard/4e687470-f3c7-11e8-8d09-b151e2b1cf8e?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A300000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))"
