@@ -46,6 +46,10 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: es-indexer-host
+  - name: PGR_CREATE_TOPIC_NAME
+    value: statea-save-pgr-request-batch
+  - name: PGR_BATCH_CREATE_TOPIC_NAME
+    value: statea-save-pgr-request
   - name: EGOV_INDEXER_YML_REPO_PATH
     value: {{ index .Values "egov-indexer-yaml-repo-path" | quote }}
   {{- if index .Values "global" "serializers-timezone-in-ist" }}
