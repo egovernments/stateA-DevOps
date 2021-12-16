@@ -1,7 +1,7 @@
 # Default values for egov-edcr.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-namespace: egov
+namespace: statea
 
 # Common Labels
 labels:
@@ -126,6 +126,7 @@ state_migration: true
 state_schema: state
 multitenancy: true
 db_flyway: false
+is.environment.central.instance=true
 
 mail_config: |
   mail.port=465
@@ -220,11 +221,11 @@ hdfc_payment_gatway_details: |
 # Ingress Configs
 ingress:
   enabled: true
-  zuul: false
+  zuul: true
   waf: 
     enabled: false
   additionalAnnotations: |
     nginx.ingress.kubernetes.io/proxy-body-size: 8m
-  context: "egi"
+  context: "edcr"
   
 
