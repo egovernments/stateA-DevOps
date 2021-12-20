@@ -126,7 +126,7 @@ state_migration: true
 state_schema: state
 multitenancy: true
 db_flyway: false
-is.environment.central.instance=true
+is.environment.central.instance: true
 
 mail_config: |
   mail.port=465
