@@ -194,7 +194,7 @@ microservice: |
   ms.url=http://egov-filestore.egov:8080/
   filestoreservice.beanname=egovMicroServiceStore
   mdms.enable=true
-  mdms.host=http://egov-mdms-service.egov:8080/
+  mdms.host=http://egov-mdms-service.statea:8080/
   mdms.searchurl=egov-mdms-service/v1/_search
 
 payment_gatway_credential: |
