@@ -941,7 +941,7 @@ edcrTenants: |
   mdms.host=https://statea.digit.org
   
 egov-edcr:
-  is.environment.central.instance=true
+  is.environment.central.instance: true
   ingress:
     enabled: true
     zuul: true
