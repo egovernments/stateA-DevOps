@@ -939,9 +939,9 @@ edcrTenants: |
   filestoreservice.beanname=egovMicroServiceStore
   mdms.enable=true
   mdms.host=https://statea.digit.org
-  is.environment.central.instance=true
   
 egov-edcr:
+  is.environment.central.instance=true
   ingress:
     enabled: true
     zuul: true
