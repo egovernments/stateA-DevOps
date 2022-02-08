@@ -126,7 +126,6 @@ state_migration: true
 state_schema: state
 multitenancy: true
 db_flyway: false
-is.environment.central.instance: true
 
 mail_config: |
   mail.port=465
@@ -196,6 +195,7 @@ microservice: |
   mdms.enable=true
   mdms.host=http://egov-mdms-service.statea:8080/
   mdms.searchurl=egov-mdms-service/v1/_search
+  is.environment.central.instance: true
 
 payment_gatway_credential: |
   pnb.mid=${pnb-mid}
