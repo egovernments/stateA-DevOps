@@ -935,13 +935,17 @@ edcrTenants: |
   common.domain.name=statea.digit.org
   tenant.statea.digit.org=statea
   client.id=statea
+  
+# eGov-eDCR DIGIT integration related config
+microservice: |
   ms.url=http://egov-filestore.statea:8080/
   filestoreservice.beanname=egovMicroServiceStore
   mdms.enable=true
-  mdms.host=https://statea.digit.org
+  mdms.host=http://egov-mdms-service.statea:8080/
+  mdms.searchurl=egov-mdms-service/v1/_search
+  is.environment.central.instance=true
   
 egov-edcr:
-  is.environment.central.instance: true
   ingress:
     enabled: true
     zuul: true
