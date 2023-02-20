@@ -4,6 +4,7 @@
 global:
     containerRegistry: egovio
 
+namespace: statea
 replicas: 1
 httpPort: 8080
 appType: ""
