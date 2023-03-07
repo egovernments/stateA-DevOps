@@ -111,6 +111,23 @@ env: |
     value: "false"
   - name: ASSESSMENT_WORKFLOW_ENABLED
     value: "false"
+  
+  {{- if index .Values "is-workflow-enabled" }}
+  - name: IS_WORKFLOW_ENABLED
+    value: {{ index .Values "is-workflow-enabled" | quote }}
+  {{- else }}  
+  - name: IS_WORKFLOW_ENABLED
+    value: "true"
+  {{- end }}
+
+  {{- if index .Values "is.mutation.workflow.enabled" }}
+  - name: IS_MUTATION_WORKFLOW_ENABLED
+    value: {{ index .Values "is.mutation.workflow.enabled" | quote }}
+  {{- else }}  
+  - name: IS_MUTATION_WORKFLOW_ENABLED
+    value: "true"
+  {{- end }}
+
   - name: EGOV_IDGEN_ACK_FORMAT
     value: {{ index .Values "egov-idgen-ack-format" | quote }}
   - name: EGOV_IDGEN_MUTATION_FORMAT
@@ -140,7 +157,7 @@ env: |
   - name: EGOV_USR_EVENTS_CREATE_TOPIC
     value: "persist-user-events-async"
   - name: EGOV_USR_EVENTS_PAY_LINK
-    value: "citizen/withoutAuth?redirectTo=egov-common/pay?consumerCode=$consumerCode&tenantId=$tenantId&businessService=$businessService"
+    value: {{ index .Values "property-userevents-pay-link" | quote }}
   - name: EGOV_USR_EVENTS_PAY_CODE
     value: "PAY"          
   {{- if index .Values "tracing-enabled" }}
@@ -152,3 +169,5 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: es-indexer-host  
+  - name: PROPERTY_DECRYPTION_ABAC_ENABLED
+    value: {{ index .Values "property-decryption-abac-enabled" | quote }}
