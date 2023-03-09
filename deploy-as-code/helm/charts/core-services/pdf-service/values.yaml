@@ -30,6 +30,14 @@ tracing-enabled: true
 data-config-urls: "file:///work-dir/configs/pdf-service/data-config/firenoc-receipt.json,file:///work-dir/configs/pdf-service/data-config/pt-receipt.json,file:///work-dir/configs/pdf-service/data-config/tl-receipt.json,file:///work-dir/configs/pdf-service/data-config/consolidatedbill.json,file:///work-dir/configs/pdf-service/data-config/consolidatedreceipt.json,file:///work-dir/configs/pdf-service/data-config/tlapplication.json,file:///work-dir/configs/pdf-service/data-config/ws-consolidatedacknowlegment.json,file:///work-dir/configs/pdf-service/data-config/ws-consolidatedsewerageconnection.json,file:///work-dir/configs/pdf-service/data-config/tlcertificate.json"
 format-config-urls: "file:///work-dir/configs/pdf-service/format-config/firenoc-receipt.json,file:///work-dir/configs/pdf-service/format-config/pt-receipt.json,file:///work-dir/configs/pdf-service/format-config/tl-receipt.json,file:///work-dir/configs/pdf-service/format-config/consolidatedbill.json,file:///work-dir/configs/pdf-service/format-config/consolidatedreceipt.json,file:///work-dir/configs/pdf-service/format-config/tlapplication.json,file:///work-dir/configs/pdf-service/format-config/ws-consolidatedacknowlegment.json,file:///work-dir/configs/pdf-service/format-config/ws-consolidatedsewerageconnection.json,file:///work-dir/configs/pdf-service/format-config/tlcertificate.json"
 
+# Persistence Configs
+persistence:
+    enabled: false
+    accessMode: ReadWriteOnce
+    size: "1Gi"
+
+
+
 # Additional Container Envs
 env: |
   - name: NODE_ENV
@@ -68,21 +76,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: egov-services-fqdn-name
-  {{- if index .Values "global" "is-environment-central-instance" }}        
-  - name: IS_ENVIRONMENT_CENTRAL_INSTANCE
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: is-environment-central-instance
-  {{- end }}
-  {{- if index .Values "global" "is-environment-central-instance" }}        
-  - name: STATE_LEVEL_TENANTID_LENGTH
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: state-level-tenantid-length
-  {{- end }}    
+        key: egov-services-fqdn-name      
   - name: DB_PORT
     value: "5432"  
   - name: SERVER_PORT
