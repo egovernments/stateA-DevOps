@@ -52,6 +52,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-idgen
+  - name: EGOV_URL_SHORTNER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-url-shortening
   - name: EGOV_WORKFLOW_HOST
     valueFrom:
       configMapKeyRef:
@@ -92,6 +97,27 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-user
+  - name: EGOV_INTERNAL_MICROSERVICE_USER_UUID
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: egov-internal-microservice-user-uuid  
+  - name: EGOV_MDMS_SEARCH_ENDPOINT
+    value: "/egov-mdms-service/v1/_search"
+  - name: PGR_KAFKA_CREATE_TOPIC
+    value: "statea-save-pgr-request"
+  - name: PGR_KAFKA_UPDATE_TOPIC
+    value: "statea-update-pgr-request"
+  - name: KAFKA_TOPICS_NOTIFICATION_SMS
+    value: "egov.core.notification.sms"
+  - name: PERSISTER_SAVE_TRANSITION_WF_TOPIC
+    value: "statea-save-wf-transitions"
+  - name: PGR_KAFKA_MIGRATION_TOPIC
+    value: "statea-pgr-migration"
+  - name: PGR_KAFKA_MIGRATION_PERSISTOR_TOPIC
+    value: "statea-save-pgr-request-batch"
+  - name: PERSISTER_SAVE_TRANSITION_WF_MIGRATION_TOPIC
+    value: "statea-save-wf-transitions-batch"
   - name: NOTIFICATION_SMS_ENABLED
     value: {{ index .Values "notification-sms-enabled" | quote }}
   - name: NOTIFICATION_EMAIL_ENABLED

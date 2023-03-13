@@ -13,3 +13,4 @@ ingress:
 image:
   repository: "certificate-verification"
 replicas: "1"
+httpPort: 80
