@@ -279,7 +279,7 @@ egov-user:
   citizen-otp-fixed: "123456"
   citizen-otp-fixed-enabled: "true"
   egov-state-level-tenant-id: "in.statea"
-  decryption-abac-enabled: "true"
+  decryption-abac-enabled: "false"
 
 chatbot:
   kafka-topics-partition-count: 3
@@ -651,7 +651,7 @@ property-services:
   egov-idgen-mutation-format: "PG-MT-[CITY]-[SEQ_EG_PT_MUTATION]"
   egov-idgen-assm-format: "PG-AS-[cy:yyyy-MM-dd]-[SEQ_EG_PT_ASSM]"
   property-userevents-pay-link: "digit-ui/citizen/payment/my-bills/$businessService/$propertyId?tenantId=$tenantId"
-  property-decryption-abac-enabled: "true"
+  property-decryption-abac-enabled: "false"
 
 egov-workflow-v2:
   logging-level: "DEBUG"
@@ -1007,11 +1007,11 @@ oauth2-proxy:
 
 ws-services:
   is-external-workflow-enabled: "true"
-  water-decryption-abac-enabled: "true"
+  water-decryption-abac-enabled: "false"
 
 sw-services:
   is-external-workflow-enabled: "true"
-  sewerage-decryption-abac-enabled: "true"
+  sewerage-decryption-abac-enabled: "false"
 
 # eGov-eDCR DIGIT integration related config
 egov-edcr:
