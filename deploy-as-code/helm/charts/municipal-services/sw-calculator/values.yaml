@@ -114,3 +114,8 @@ env: |
   
   - name: SEWERAGE_DECRYPTION_ABAC_ENABLED
     value: {{ index .Values "sewerage-decryption-abac-enabled" | quote }}
+  - name: STATE_LEVEL_TENANT_ID
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: state-level-tenant-id
