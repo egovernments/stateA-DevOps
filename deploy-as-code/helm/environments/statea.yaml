@@ -36,6 +36,7 @@ cluster-configs:
         egov-state-level-tenant-id: "in.statea"
         state-level-tenantid-length: "2"
         is-environment-central-instance: "true"
+        state-level-tenant-id: "in.statea"
         es-host: "elasticsearch-data-v1.statea"
         es-indexer-host: "http://elasticsearch-data-v1.statea:9200/"
         flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
