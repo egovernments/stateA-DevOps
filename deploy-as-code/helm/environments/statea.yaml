@@ -40,8 +40,8 @@ cluster-configs:
         es-host: "elasticsearch-data-v1.statea"
         es-indexer-host: "http://elasticsearch-data-v1.statea:9200/"
         flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
-        kafka-brokers: "kafka-v2.backbone:9092"
-        kafka-infra-brokers: "kafka-v2.backbone:9092"
+        kafka-brokers: "kafka-v2.kafka-cluster:9092"
+        kafka-infra-brokers: "kafka-v2.kafka-cluster:9092"
         logging-level-jdbc: "debug"
         mobile-validation-workaround: "true"
         s3-assets-bucket: "(in.statea-assets|egov-central-instance-assets|in.statea-egov-assets)"
@@ -55,7 +55,7 @@ cluster-configs:
         egov-indexer-yaml-repo-path: "https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/egov-telemetry-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/rainmaker-pgr-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/rainmaker-pt-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/billingservices-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/tradelicense-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/collection-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/egov-uploader-indexer.yml"
         tracer-errors-provideexceptionindetails: "true"
         timezone: "Asia/Kolkata"
-        es-infra-host: elasticsearch-data-v1.backbone
+        es-infra-host: elasticsearch-data-v1.kafka-cluster
         care-db-name: "care_db"
         care-db-port: "5432"
         db-ssl: "true"
@@ -100,7 +100,7 @@ cluster-configs:
         egov-data-uploader: "http://egov-data-uploader.digit:8080/"
         egov-indexer: "http://egov-indexer.digit:8080/"
         egov-hrms: "http://internal-gateway.digit:8080/"
-        es-client: "http://elasticsearch-data-v1.backbone:9200"
+        es-client: "http://elasticsearch-data-v1.kafka-cluster:9200"
         hr-masters: "http://hr-masters.digit:8080/"
         hr-employee: "http://hr-employee.digit:8080/"
         hr-masters-v2: "http://hr-masters-v2.digit:8080/"
@@ -783,7 +783,7 @@ kafka-v2:
         zone: ap-south-1b
       - volumeId: "vol-0e49583165c853528"
         zone: ap-south-1b
-  zookeeperHosts: "zookeeper-v2.backbone:2181/kafka-v2"
+  zookeeperHosts: "zookeeper-v2.zookeeper-cluster:2181/kafka-v2"
 
   heapOptions: "-Xms704M -Xmx704M"
   memory_limits: 1408Mi
@@ -795,18 +795,18 @@ kafka-v2:
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 kafka-connect:
-  namespace: backbone
+  namespace: kafka-cluster
   image:
     tag: "5.4.1" 
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<
 kafka-connect-restart-tasks:
-  namespace: backbone
-  kafka-connect-hosts: "kafka-connect-infra.backbone:8083,kafka-connect.backbone:8083"     
+  namespace: kafka-cluster
+  kafka-connect-hosts: "kafka-connect-infra.kafka-cluster:8083,kafka-connect.kafka-cluster:8083"     
 
 # zookeeper-v2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 zookeeper-v2:
-  namespace: backbone
+  namespace: zookeeper-cluster
   image:
     tag: "5.4.1"
   persistence:
@@ -961,7 +961,7 @@ whatsapp-webhook:
     - rushang7/push-to-kafka:1.0.0-bronze
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 grafana:
-  namespace: backbone
+  namespace: monitoring
   initContainers:
     gitSync:
       enabled: true
