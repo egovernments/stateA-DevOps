@@ -58,6 +58,7 @@ cluster-configs:
         es-infra-host: elasticsearch-data-v1.backbone
         care-db-name: "care_db"
         care-db-port: "5432"
+        db-ssl: "true"
 
     egov-service-host:
       namespace: [ statea ]
