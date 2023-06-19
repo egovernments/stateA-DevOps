@@ -8,6 +8,7 @@ ingress:
   enabled: true
   zuul: true
   context: "dashboard-ingest"
+  namespace: "digit"
 
 # Init Containers Configs
 initContainers:

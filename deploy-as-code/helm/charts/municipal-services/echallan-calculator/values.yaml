@@ -8,6 +8,7 @@ ingress:
   enabled: true
   zuul: true
   context: "echallan-calculator"
+  namespace: "digit"
 
 # Init Containers Configs
 initContainers: {}
