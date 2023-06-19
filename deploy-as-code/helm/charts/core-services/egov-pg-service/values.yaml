@@ -8,6 +8,7 @@ ingress:
   enabled: true
   zuul: true
   context: "pg-service"
+  namespace: "digit"
 
 # Init Containers Configs
 initContainers:

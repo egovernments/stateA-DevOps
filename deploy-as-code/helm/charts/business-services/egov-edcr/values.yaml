@@ -230,5 +230,6 @@ ingress:
   additionalAnnotations: |
     nginx.ingress.kubernetes.io/proxy-body-size: 8m
   context: "edcr"
+  namespace: "digit"
   
 
