@@ -1,6 +1,7 @@
 global:
   domain: statea.digit.org
   tracing-enabled: true
+  ingressnamespace: digit
   namespace: statea
   nodepool:
     nodeAffinity: false
