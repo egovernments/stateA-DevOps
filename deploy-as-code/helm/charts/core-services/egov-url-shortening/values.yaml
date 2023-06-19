@@ -8,6 +8,7 @@ ingress:
   enabled: true
   zuul: false
   context: "egov-url-shortening"
+  namespace: "digit"
 
 # Init Containers Configs
 initContainers:
